@@ -77,5 +77,5 @@ Solution
             else:
                 check_help()
 
-        sys.exit(1)
+        sys.exit(0)
 
