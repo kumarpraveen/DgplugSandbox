@@ -30,9 +30,12 @@ def check_help():
     print """
             ./sharevalue.py <Company_Symbol> 
             Ex ./sharevalue.py YHOO
+         """
 
+def check_symbol():
+    
+    print """
             Please provide Company NASDAQ Symbol correctly
-            otherwise you will get sharevalue 0
           """
 
 if __name__ == '__main__':
@@ -43,6 +46,11 @@ if __name__ == '__main__':
         symbol = sys.argv[1]
         company = Finance(symbol)
         sharevalue = float(company.sharevalue())
+    
+    if sharevalue: 
         print "\nShare value for %s is: %.2f\n" % (symbol, sharevalue)
+    
+    else:
+        check_symbol()    
 
     sys.exit(0)
