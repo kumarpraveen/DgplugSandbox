@@ -60,8 +60,8 @@ Solution
                 ./sharevalue.py <Company_Symbol> 
                 Ex ./sharevalue.py YHOO
 
-                Here Company NASDAQ Symbol is have exactly have 4 char
-                Please Provide correct NASDAQ Symbol
+                Please provide Company NASDAQ Symbol correctly
+                otherwise you will get sharevalue 0
               """
 
     if __name__ == '__main__':
@@ -72,10 +72,6 @@ Solution
             symbol = sys.argv[1]
             company = Finance(symbol)
             sharevalue = float(company.sharevalue())
-            if sharevalue:
-                print "Share value for %s is: %.2f " %  (symbol, sharevalue)
-            else:
-                check_help()
+            print "\nShare value for %s is: %.2f\n" % (symbol, sharevalue)
 
         sys.exit(0)
-
